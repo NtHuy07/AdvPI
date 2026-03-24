@@ -40,15 +40,15 @@ unzip models.zip
 ### Attack VLMs with CVT-MAP-Elites
 
 ```bash
-uv run main.py run_name=<run_name> dataset_model=<dataset_model>
+uv run main.py run_name=<run_name> env.dataset_model=<dataset_model>
 ```
 
 **Example:**
 ```bash
-uv run main.py run_name=logs/qd/entrep/ dataset_model=entrep
+uv run main.py run_name=logs/qd/entrep/ env.dataset_model=entrep
 ```
 
-**Available `dataset_model` options:**
+**Available `env.dataset_model` options:**
 
 | Value | Dataset | Model | Setting |
 |---|---|---|---|
@@ -69,12 +69,12 @@ bash experiments/1_vlm.sh
 ### Attack with Standard GA
 
 ```bash
-uv run main.py run_name=<run_name> dataset_model=<dataset_model> qd.qd_name=cvtga qd.thres=<threshold>
+uv run main.py run_name=<run_name> env.dataset_model=<dataset_model> qd.qd_name=cvtga qd.thres=<threshold>
 ```
 
 **Example:**
 ```bash
-uv run main.py run_name=logs/ga-0.5/entrep_class/ dataset_model=entrep_class qd.qd_name=cvtga qd.thres=0.5
+uv run main.py run_name=logs/ga-0.5/entrep_class/ env.dataset_model=entrep_class qd.qd_name=cvtga qd.thres=0.5
 ```
 
 To reproduce the GA experiment with different thresholds:
@@ -91,7 +91,7 @@ After running an attack on a source model, transfer adversarial examples to a di
 ```bash
 uv run main.py \
   run_name=<target_run_name> \
-  dataset_model=<target_dataset_model> \
+  env.dataset_model=<target_dataset_model> \
   source_dir=<source_run_name>
 ```
 
@@ -100,7 +100,7 @@ uv run main.py \
 uv run main.py \
   run_name=logs/transfer/mscoco_b32/ \
   source_dir=logs/qd/mscoco_l14/ \
-  dataset_model=mscoco_b32
+  env.dataset_model=mscoco_b32
 ```
 
 To reproduce the MS COCO transfer experiment:
@@ -115,12 +115,12 @@ bash experiments/3_transfer.sh
 Run CVT-MAP-Elites with a 3D behavioral descriptor archive:
 
 ```bash
-uv run main.py run_name=<run_name> dataset_model=<dataset_model> dim=3 qd.centroids_folder=<centroid_folder>
+uv run main.py run_name=<run_name> env.dataset_model=<dataset_model> dim=3 qd.centroids_folder=<centroid_folder>
 ```
 
 **Example:**
 ```bash
-uv run main.py run_name=logs/3d/entrep_class/ dataset_model=entrep_class dim=3 qd.centroids_folder=3d_centroids
+uv run main.py run_name=logs/3d/entrep_class/ env.dataset_model=entrep_class dim=3 qd.centroids_folder=3d_centroids
 ```
 
 > **Note:** Pre-computed centroids for 2D and 3D archives are provided in `2d_centroids/` and `3d_centroids/` for reproducibility. To generate new centroids, point `qd.centroids_folder` to a new path.
