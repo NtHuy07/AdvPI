@@ -1,6 +1,6 @@
 # Adversarial Prompt Illumination for Vision-Language Models
 
-> **"Investigating Robustness in Vision-Language Models via Adversarial Prompt Illumination"**  
+> Official implementation of **"Investigating Robustness in Vision-Language Models via Adversarial Prompt Illumination"**  
 > Accepted as a full paper at **GECCO 2026** · San Jose, Costa Rica
 
 ![overview](assets/overview.png)
