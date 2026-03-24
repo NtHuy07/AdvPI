@@ -115,12 +115,12 @@ bash experiments/3_transfer.sh
 Run CVT-MAP-Elites with a 3D behavioral descriptor archive:
 
 ```bash
-uv run main.py run_name=<run_name> env.dataset_model=<dataset_model> dim=3 qd.centroids_folder=<centroid_folder>
+uv run main.py run_name=<run_name> env.dataset_model=<dataset_model> env.dim=3 qd.centroids_folder=<centroid_folder>
 ```
 
 **Example:**
 ```bash
-uv run main.py run_name=logs/3d/entrep_class/ env.dataset_model=entrep_class dim=3 qd.centroids_folder=3d_centroids
+uv run main.py run_name=logs/3d/entrep_class/ env.dataset_model=entrep_class env.dim=3 qd.centroids_folder=3d_centroids
 ```
 
 > **Note:** Pre-computed centroids for 2D and 3D archives are provided in `2d_centroids/` and `3d_centroids/` for reproducibility. To generate new centroids, point `qd.centroids_folder` to a new path.
