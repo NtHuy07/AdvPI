@@ -4,6 +4,6 @@ for i in {1..10}; do
     uv run main.py run_name=logs/ablation/$ablation/entrep_class/run_$i/ env.dataset_model=entrep_class env.seed=$i env.variation_mode=$ablation
   done
   
-  uv run main.py run_name=logs/ablation/no-crossover/entrep_class/run_$i/ env.dataset_model=entrep_class env.seed=$i env.qd.crossover=False
+  uv run main.py run_name=logs/ablation/no-crossover/entrep_class/run_$i/ env.dataset_model=entrep_class env.seed=$i qd.crossover=False
   
 done
